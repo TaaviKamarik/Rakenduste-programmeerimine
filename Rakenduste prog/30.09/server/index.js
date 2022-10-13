@@ -9,6 +9,7 @@ require('dotenv').config()
 const dogsRoutes = require('./routes/dogs.routes')
 const catsRoutes = require('./routes/cats.routes')
 const todoRoutes = require('./routes/todo.routes')
+const authRoutes = require('./routes/auth.routes')
 
 app.use(morgan('dev'))
 app.use(express.json()) // body-parser asemel
@@ -22,6 +23,7 @@ mongoose
 app.use('/dogs', dogsRoutes)
 app.use('/cats', catsRoutes)
 app.use('/todo', todoRoutes)
+app.use('/auth', authRoutes)
 
 // CRUD
 app.get('/', (req, res) => {

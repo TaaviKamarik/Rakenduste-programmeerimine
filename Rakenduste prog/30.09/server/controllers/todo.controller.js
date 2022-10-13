@@ -13,7 +13,7 @@ const Todo = mongoose.model('Todo', todoSchema)
 
 exports.create = async (req, res) => {
 
-    const { id } = req.params
+  const { id } = req.params
 
   const {title, date, importance, completed } = req.body
 
@@ -30,7 +30,7 @@ exports.read = async (req, res) => {
 exports.update = async (req, res) => {
   // Täiendada ise, otsida mongoosejs.com dokumentatsioonist (nt findOneAndReplace)
   const { id } = req.params
-  const { title, date, importance, completed  } = req.body
+  const { title, date, importance, completed  } = req.bod
 
   const todo = await Todo.findByIdAndUpdate({_id: id}, {title:  title, date: date, importance: importance, completed: completed})
 
